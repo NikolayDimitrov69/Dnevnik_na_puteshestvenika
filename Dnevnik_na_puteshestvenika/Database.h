@@ -1,7 +1,16 @@
-﻿#pragma once
-#include<iostream>
+﻿#ifndef __DATABASE_HPP
+#define __DATABASE_HPP
+#include <string>
+#include <vector>
+#include <iterator>
+#include <iostream>
+#include "Timeperiod.h"
 
 using std::string;
+
+class Database;
+
+using DatabaseDb = std::vector<Database>;
 
 class Database {
 private:
@@ -20,33 +29,39 @@ private:
 	string photos;
 
 public:
-
-	//! Мутатор за дестинация.
-	void setDestination(string);
-
 	//! Селектор за дестинация.
-	string getDestination();
+	string getDestination() const {
+		return destination;
+	};
 
 	//
 	//to be added for timeperiod
 
-	//! Мутатор за оценка.
-	void setGrade(unsigned);
-
 	//! Селектор за оценка.
-	unsigned getGrade();
-
-	//! Мутатор за коментар.
-	void setComment(string);
+	unsigned getGrade() const {
+		return grade;
+	}
 
 	//! Селектор за коментар.
-	string getComment();
-
-	//! Мутатор за снимки.
-	void setPhotos(string);
+	string getComment() const {
+		return comment;
+	};
 
 	//! Селектор за снимки.
-	string getPhotos();
+
+	Database();
+
+	Database(string _destination, Timeperiod _time, unsigned _grade, string _comment, string _photos);
 
 };
 
+std::ostream& operator<<(std::ostream&, const Database&);
+
+std::istream& operator>>(std::istream&, Database&);
+
+std::ostream& operator<<(std::ostream&, const DatabaseDb&);
+
+std::istream& operator>>(std::istream&, DatabaseDb&);
+
+
+#endif // __DATABASE_HPP

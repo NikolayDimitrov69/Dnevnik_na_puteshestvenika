@@ -1,7 +1,16 @@
-﻿#pragma once
+﻿#ifndef __USER_HPP
+#define __USER_HPP
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iterator>
 #include <iostream>
 
 using std::string;
+
+class User;
+
+using UsersDb = std::vector<User>;
 
 class User {
 private:
@@ -16,26 +25,40 @@ private:
 	string email;
 
 public:
-
-	//! Мутатор за потребителско име.
-	void setUsername(string);
-
 	//! Селектор за потребилтеско име.
-	string getName();
-
-	//! Мутатор за потребителска парола.
-	void setPassword(string);
+	string getName() const {
+		return username;
+	};
 
 	//! Селектор за потребителска парола.
-	string getPassword();
-
-	//! Мутатор за потрелбилски имейл адрес.
-	void setEmail(string);
+	string getPassword() const {
+		return password;
+	};
 
 	//! Сeлектор за потрелбилски имейл адрес.
-	string getEmail();
+	string getEmail() const {
+		return email;
+	};
+
+	User()
+	{};
 
 	//! Конструктор за "User".
 	User(string username = "default", string password = "default", string email = "default");
+
+	bool validate()
+	{
+		return true;
+	}
+
 };
 
+std::istream& operator >> (std::istream&, User&);
+
+std::ostream& operator << (std::ostream&, const User&);
+
+std::istream& operator >> (std::istream&, UsersDb&);
+
+std::ostream& operator << (std::ostream&, const UsersDb&);
+
+#endif // __USER_HPP
