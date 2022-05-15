@@ -1,6 +1,8 @@
 #ifndef __TIMEPERIOD_HPP
 #define __TIMEPERIOD_HPP
 #include <iostream>
+#include <string>
+#include <iterator>
 #include "Date.h"
 
 class Timeperiod {
@@ -10,17 +12,29 @@ private:
 	Date end;
 public:
 
-	unsigned getStartYear() const;
+	unsigned getStartYear() const {
+		return start.getYear();
+	};
 
-	unsigned getEndYear() const;
+	unsigned getEndYear() const {
+		return end.getYear();
+	};
 
-	unsigned getStartDay() const;
+	unsigned getStartDay() const {
+		return start.getDay();
+	};
 
-	unsigned getEndDay() const;
+	unsigned getEndDay() const {
+		return end.getDay();
+	};
 
-	unsigned getStartMonth() const;
+	unsigned getStartMonth() const {
+		return start.getMonth();
+	};
 
-	unsigned getEndMonth() const;
+	unsigned getEndMonth() const {
+		return end.getMonth();
+	};
 
 	Timeperiod();
 

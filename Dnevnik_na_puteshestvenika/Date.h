@@ -12,23 +12,20 @@ private:
 	//! Променлива тип беззнакова за години.
 	unsigned year;
 public:
-	//! Мутатор за дни.
-	void setDay(unsigned);
-
 	//! Селектор за дни.
-	unsigned getDay() const;
-
-	//! Мутатор за месеци.
-	void setMonth(unsigned);
+	unsigned getDay() const {
+		return day;
+	};
 
 	//! Селектор за месеци.
-	unsigned getMonth() const;
-
-	//! Мутатор за години.
-	void setYear(unsigned);
+	unsigned getMonth() const {
+		return month;
+	};
 
 	//! Селектор за години.
-	unsigned getYear() const;
+	unsigned getYear() const {
+		return year;
+	};
 
 	//! Конструктор за дата.
 	Date(unsigned _year = 0, unsigned _month = 1, unsigned _day = 1);

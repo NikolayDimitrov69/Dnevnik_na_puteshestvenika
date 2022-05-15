@@ -24,12 +24,33 @@
     <ClCompile Include="Database.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Timeperiod.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Photos.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timeperiod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Photos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dnevnik_na_puteshestvenika.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,6 @@
-#include "Photos.h"
+﻿#include "Photos.h"
 
+//! Функция за замяна на буква с друга буква
 std::string replace_all(const std::string& in, char what, char with)
 {
     std::string result = in;
@@ -10,6 +11,7 @@ std::string replace_all(const std::string& in, char what, char with)
     return result;
 }
 
+//! Функция за премахване на повтарящи се разстояния както и тези в началото и края
 std::string remove_extra_spaces(const std::string& in)
 {
     std::string result;
@@ -35,12 +37,13 @@ std::string remove_extra_spaces(const std::string& in)
 
 std::istream& operator>>(std::istream& is, Photos& photos)
 {
+    //! Локална променлива
     std::string _photos;
 
     if (is.rdbuf() == std::cin.rdbuf())
     {
-        std::cout << "enter photos: ";
-        // https://en.cppreference.com/w/cpp/io/manip/ws
+        std::cout << "Enter photos: ";
+        //! https://en.cppreference.com/w/cpp/io/manip/ws
         std::getline(is >> std::ws, _photos);
         _photos = remove_extra_spaces(_photos);
         _photos = replace_all(_photos, ' ', ',');
@@ -59,7 +62,7 @@ std::ostream& operator<<(std::ostream& os, const Photos& photos)
 {
     if (os.rdbuf() == std::cout.rdbuf())
     {
-        os << "photos: " << photos.getPhotos();
+        os << "Photos: " << photos.getPhotos();
     }
     else
     {

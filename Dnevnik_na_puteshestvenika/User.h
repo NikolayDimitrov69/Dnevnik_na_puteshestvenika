@@ -26,17 +26,17 @@ private:
 
 public:
 	//! Селектор за потребилтеско име.
-	string getName() const {
+	const string getName() const {
 		return username;
 	};
 
 	//! Селектор за потребителска парола.
-	string getPassword() const {
+	const string getPassword() const {
 		return password;
 	};
 
 	//! Сeлектор за потрелбилски имейл адрес.
-	string getEmail() const {
+	const string getEmail() const {
 		return email;
 	};
 
@@ -44,13 +44,7 @@ public:
 	{};
 
 	//! Конструктор за "User".
-	User(string username = "default", string password = "default", string email = "default");
-
-	bool validate()
-	{
-		return true;
-	}
-
+	User(string, string password, string email);
 };
 
 std::istream& operator >> (std::istream&, User&);
