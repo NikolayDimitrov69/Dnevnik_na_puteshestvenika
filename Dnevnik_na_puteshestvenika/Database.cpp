@@ -26,6 +26,7 @@ std::istream& operator>>(std::istream& is, Database& database) {
 		std::getline(is >> std::ws, comment);
 	}
 	//! Влиза тук, когато сме във файлов поток. Елементите са разделени със спейс, коментара го четем като всичко останало до края на реда включително спейсове.
+	else
 	{
 		is >> destination >> time >> grade >> photos;
 		//! https://en.cppreference.com/w/cpp/io/manip/ws
