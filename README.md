@@ -1,2 +1,2 @@
-# Dnevnik_na_puteshestvenika
-Това е качване на проекта от момента на написване на този "readme", поради попогрешно изтриване на файл от оригиналния проект, който все още присъства в Гит с история на промените до момента на грешката
+# Traveler-s-Diary
+A siple university project that provides a command line interface for users to be able to create and login to accounts. Users can then add reviews for destinations and get and read other people's reviews of a given place. The information is stored locally in the file system.
